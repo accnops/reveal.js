@@ -518,7 +518,7 @@
 
 			// Vertical stacks are not centred since their section
 			// children will be
-			if( slide.classList.contains( 'stack' ) === false ) {
+			if( slide.classList.contains( 'stack' ) === false || slide.classList.contains( 'center' ) === true ) {
 				// Center the slide inside of the page, giving the slide some margin
 				var left = ( pageWidth - slideWidth ) / 2,
 					top = ( pageHeight - slideHeight ) / 2;

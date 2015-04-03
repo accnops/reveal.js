@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<script src="/socket.io/socket.io.js"></script>
+
+		<script>
+		(function() {
+
+			var connected = false;
+
+			var socket = io.connect( window.location.origin ),
+				socketId = '{{socketId}}';
+
+			socket.on( 'statechanged', function( data ) {
+
+				// ignore data from sockets that aren't ours
+				if( data.socketId !== socketId ) { return; }
+
+				if( connected === false ) {
+					connected = true;
+
+					setupSomething();
+				}
+
+				handleStateMessage( data );
+
+			} );
+
+			window.addEventListener( 'message', function( event ) {
+
+				console.log(event);
+				var data = JSON.parse( event.data );
+
+				if( data && data.namespace === 'reveal' ) {
+					if( /ready/.test( data.eventName ) ) {
+						socket.emit( 'connect', { socketId: socketId } );
+					}
+				}
+
+			} );
+
+			/**
+			 * Called when the main window sends an updated state.
+			 */
+			function handleStateMessage( data ) {
+				console.log(date);
+			}
+
+			// Limit to max one state update per X ms
+			handleStateMessage = debounce( handleStateMessage, 200 );
+
+			/**
+			 * Limits the frequency at which a function can be called.
+			 */
+			function debounce( fn, ms ) {
+
+				var lastTime = 0,
+					timeout;
+
+				return function() {
+
+					var args = arguments;
+					var context = this;
+
+					clearTimeout( timeout );
+
+					var timeSinceLastCall = Date.now() - lastTime;
+					if( timeSinceLastCall > ms ) {
+						fn.apply( context, args );
+						lastTime = Date.now();
+					}
+					else {
+						timeout = setTimeout( function() {
+							fn.apply( context, args );
+							lastTime = Date.now();
+						}, ms - timeSinceLastCall );
+					}
+
+				}
+
+			}
+
+		})();
+		</script>
+
+	</body>
+</html>

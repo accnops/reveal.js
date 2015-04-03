@@ -1,0 +1,19 @@
+.nowrap {
+	white-space: nowrap;
+}
+
+.reveal section img {
+	margin: 15px 0px;
+	background: none;
+	border: none;
+
+	box-shadow: none;
+}
+
+.padded {
+	margin: 30px !important;
+}
+
+h6 {
+	opacity: 0.5;
+}
