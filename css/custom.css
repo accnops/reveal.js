@@ -18,10 +18,57 @@ h6 {
 	opacity: 0.5;
 }
 
-.semi-white {
-	background-color: rgba(255,255,255,0.9) !important;
+.line15 {
+	line-height: 1.5em !important;
+}
+.line2 {
+	line-height: 2em !important;
 }
 
 .sec {
 	color: #42affa;
+}
+
+.mid {
+	vertical-align: middle !important;
+}
+
+.borded td {
+	border: 1px solid black;
+}
+.borded td:first-child {
+	border-left: none;
+}
+.borded td:last-child {
+	border-right: none;
+}
+.borded thead tr:first-child td {
+	border-top: none;
+}
+.borded tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.r {
+	text-align: right !important;
+}
+.c {
+	text-align: center !important;
+}
+.l {
+	text-align: left !important;
+}
+.t {
+	vertical-align: top !important;
+}
+.m {
+	vertical-align: middle !important;
+}
+.b {
+	vertical-align: bottom !important;
+}
+
+.vpadded tr td {
+	padding-top: 1em;
+	padding-bottom: 1em;
 }

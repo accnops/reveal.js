@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -42,15 +42,19 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section class="center">
+				<section>
 					<img src="images/angular.png" width="200" />
-					<h1>Single Page Applications</h1>
+					<h2>Single Page Applications</h2>
 					with AngularJS
+
+					<aside class="notes">
+						Hi there! The goal of this presentation is to get you familiar with the core concepts of AngularJS, or simply Angular. Angular is a framework for creating cool applications for the web. Let's get started!
+					</aside>
 				</section>
 
-				<section class="center">
+				<section>
 					<h2>Road Map</h2>
-					<ol class="nowrap">
+					<ol class="nowrap line2">
 						<li class="fragment">History</li>
 						<li class="fragment">Emergence of SPA's</li>
 						<li class="fragment">AngularJS, an introduction</li>
@@ -58,42 +62,86 @@
 						<li class="fragment">Testing!</li>
 						<li class="fragment">Tools & Best practices</li>
 					</ol>
+
+					<aside class="notes">
+						We'll start with the history of the web, and how SPA's (Single Page Application) became into existence. After this, we can introduce the SPA framework Angular. During the chapter about Angular's core structures, we'll give short demos, so you get a more tangible idea of how Angular works. We'll finish of with the testing opportunities of Angular and some tools and best practices.
+					</aside>
 				</section>
 
-				<section class="center">
+				<section>
 					<h2>1. History</h2>
 				</section>
 
 				<section>
 					<h2>Web 1.0</h2>
-					<img src="images/netscape.png" width="700" />
+					<img src="images/netscape.png" width="500" />
+
+					<aside class="notes">
+						Web 1.0, 1991 - 2002-ish<br/>
+						The first websites that came to life were very static. Their purpose was purely informational in nature.
+					</aside>
 				</section>
 
 				<section>
 					<h2>Web 2.0</h2>
-					<img src="images/facebook.png" width="700" />
+					<img src="images/facebook.png" width="600" />
+
+					<aside class="notes">
+						Web 2.0, 2002-ish - Today<br/>
+						The Web 2.0 movement was driven by a change in the information source. The source shifted from purely that of the serving side, to the user. Examples are collaboration sites like Wikipedia, but also social websites like MySpace, Facebook, etcetera. The concept of BIG DATA became real, where some websites hold information of millions of users.<br/><br/>
+
+						This movement caused an increase focus on a particular quality: USER EXPERIENCE. A website with user-generated content means that users interact with it. That's when the term "application" became used in a web-context. A word that was currently used in the desktop application scene was now used in a web environment. In other words: the shift to the web had begun.
+					</aside>
 				</section>
 
 				<section>
 					<h2>Web 3.0</h2>	
-					<img src="images/qsdqsd.png" width="700" />
-					<ul class="nowrap fragment" style="float:right; vertical-align:middle; margin-top:10%">
-						<li>Mobile</li>
-						<li>Standards</li>
-						<li>SPA's</li>
-						<li>Internet of Things</li>
-						<li>...</li>
-					</ul>
+					<table>
+						<tr>
+							<td class="m"><img src="images/soundcloudscreen.png" width="700"/></td>
+							<td class="m">
+								<ul class="nowrap fragment m">
+									<li>Mobile</li>
+									<li>Standards</li>
+									<li>SPA's</li>
+									<li>Internet of Things</li>
+									<li>...</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+
+					<aside class="notes">
+						Web 3.0 (2.1, 2.5, you name it!)<br/>
+						This is far from an official term. Some concepts are just labeled as "new", and are considered as part of a new era. A very short and non-exhaustive list:
+						<ul>
+							<li>
+								Mobile<br/>
+								This can be web apps built for mobile devices, responsive sites, but also integration with native mobile apps.
+							</li>
+							<li>
+								(New) Standards<br/>
+								Standards are helpful for developers. In this way, they can easily build cross-browser application and don't worry about compatibility. New standards create new opportunities. Examples: HTML5, CSS3, ECMAScript 6 (the new JavaScript), ...
+							</li>
+							<li>
+								SPA's<br/>
+								This is the topic of today ;).
+							</li>
+							<li>
+								Internet of Things<br/>
+								Everything gets connected to the internet. Your oven, your lights at home, a GPS tracker on your dog, ...<br/>
+								Connecting everything is not an easy task (think about battery capacity...). Great challenges lie ahaid.
+					</aside>
 				</section>
 
-				<section class="center">
+				<section>
 					<h2>2. Emergence of SPA's</h2>
 				</section>
 				<section>
 					<h6>2. Emergence of SPA's</h6>
 					<img class="padded" src="images/twitter.png" width="180"  />
 					<img class="padded" src="images/soundcloud.png" width="150" />
-					<img class="padded semi-white" src="images/youtube.png" width="300" />
+					<img class="padded" src="images/youtube.png" width="300" />
 					<img class="padded" src="images/netflix.png" width="230" />
 					<img class="padded" src="images/calendar.png" width="160" />
 				</section>
@@ -101,11 +149,11 @@
 				<section>
 					<h6>2. Emergence of SPA's</h6>
 					<h2>Advantages</h2>
-					<ul class="nowrap">
-						<li>Fluid UX, like desktop applications</li>
-						<li>Chunking, only get what you need</li>
-						<li>Decoupling</li>
-						<li>Job of HTML rendering moves to client</li>
+					<ul class="nowrap line2">
+						<li class="fragment">Fluid UX, like desktop applications</li>
+						<li class="fragment">Chunking, only get what you need</li>
+						<li class="fragment">Decoupling</li>
+						<li class="fragment">Job of HTML rendering moves to client</li>
 					</ul>
 				</section>
 
@@ -116,23 +164,23 @@
 					<img class="padded" src="images/reactjs.png" width="350" />
 					<div class="nowrap">
 						<img class="padded" src="images/knockout.png" width="400" />
-						<img class="padded semi-white" src="images/backbone.png" width="550" />
+						<img class="padded" src="images/backbone.png" width="550" />
 					</div>
 				</section>
 
 				<section>
 					<h6>2. Emergence of SPA's</h6>
-					<img src="images/googletrends.png" width="700" class="semi-white" />
+					<img src="images/googletrends.png" width="700"/>
 				</section>
 
-				<section class="center">
+				<section>
 					<h2>3. AngularJS,<br/>an introduction</h2>
 				</section>
 				
 				<section>
 					<h6>3. AngularJS, an intro</h6>
-					<p><span class="nowrap"><img src="images/angular.png" width="100" style="vertical-align:middle" /> = An <span class="sec">OPEN SOURCE</span> web application framework for SPA's,</span> maintained by <img src="images/google.png" width="100"/>,<br/> and a <span class="sec">HUGE COMMUNITY</span>!</p>
-					<img src="images/angulargit.png" width="600" />
+					<p><img src="images/angular.png" class="mid" width="100"/> = <span class="sec">OPEN SOURCE</span> SPA framework<br/>Maintained by <img class="mid" src="images/google.png" width="150"/><br/> and a <span class="sec">HUGE COMMUNITY</span>!</p>
+					<img src="images/angulargit.png" width="900" />
 				</section>
 
 				<section>
@@ -148,49 +196,375 @@
 					</ol>
 				</section>
 
-				<section class="center">
+				<section>
 					<h6>A. Data-driven</h6>
-					<h2 class="demo">Demo #1</h2>
+					<h2>Demo #1</h2>
 				</section>
 
 				<section>
-					<h6>3. AngularJS, an intro</h6>
-					<table>
+					<h6>B. Declarative</h6>
+					<table class="borded">
+						<thead>
+							<tr>
+								<td class="c"><h2>Imperative</h2></td><td class="c"><h2>Declarative</h2></td>
+							</tr>
+						</thead>
 						<tbody>
 							<tr>
-								<td>1.3</td><td>Current version<br/><br/></td>
-							</tr>
-							<tr>
-								<td>1.4</td>
-								<td>								
-									Adds a new router for Angular 1 & 2<br/>
-									Better i18n<br/>
-									Simplification form handling<br/><br/>
+								<td class="c">
+									Tell the application <span class="sec">how</span> to do every action.
+									<pre class="fragment"><code data-trim>
+<ul class="nav-tabs">
+	<li>Home</li>
+	<li class="selected">Other Page</li>
+</ul>
+
+<div class="tab1">
+	Home content
+</div>
+<div class="tab2">
+	Other Page content
+</div>
+									</code></pre>
 								</td>
-							</tr>
-							<tr>
-								<td>2.0</td>
-								<td>
-									Release date: End 2015<br/>
-									Major changes, components are rewritten<br/>
-									Not backward compatible<br/>
-									Changes in 1.4 and 1.5 will simplify migration
+								<td class="c">
+									Tell the application <span class="sec">what</span> you want to do.
+									<pre class="fragment"><code data-trim>
+<tabs>
+	<tab title="Home">
+		Home content
+	</tab>
+	<tab title="Other Page">
+		Other Page content
+	</tab>
+</tabs>
+									</code></pre>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</section>
 
-				<section class="center">
+				<section>
+					<h6>C. Separate your concerns</h6>
+					<img src="images/mvc.png" width="700"/>
+				</section>
+
+				<section>
+					<h6>D. Dependency injection</h6>
+					<pre><code data-trim>
+.factory('MyService', ['$http', function ($http) {
+	return {
+		getList: function (query) {
+			return $http.get('http://website.com');
+		}
+	}
+}]);
+					</code></pre>
+				</section>
+
+				<section>
+					<h6>E. Extensible</h6>
+					<h2>Using custom directives!</h2>
+					<ul>
+						<li>Add new HTML component</li>
+						<li>Change the behavior of existing components</li>
+					</ul>
+					<pre class="fragment"><code data-trim>
+<youtube width="400" height="300" video-id="{{ctrl.videoId}}"></youtube>
+					</code></pre>
+				</section>
+
+				<section>
+					<h6>E. Test first, test again, keep testing</h6>
+					<img class="m" src="images/karma.png" width="300"/>&nbsp;&nbsp;+&nbsp;&nbsp;<img class="m" src="images/protractor.png" width="300"/>
+					<h4>= Awesome team for<br/>test driven development!</h4> 
+				</section>
+
+				<section>
+					<h6>3. AngularJS, an intro</h6>
+					<table class="vpadded">
+						<tbody>
+							<tr>
+								<td><span class="sec">1.3</span></td><td>Current version</td>
+							</tr>
+							<tr class="fragment">
+								<td><span class="sec">1.4</span></td>
+								<td>								
+									New router for Angular 1 & 2<br/>
+									Better i18n<br/>
+									Simpler form handling
+								</td>
+							</tr>
+							<tr class="fragment">
+								<td><span class="sec">2.0</span></td>
+								<td>
+									End 2015<br/>
+									Major changes, performance!<br/>
+									Not backward compatible<br/>
+									1.4 and 1.5 simplify migration
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
 					<h2>4. Core structures</h2>
 				</section>
 
-				<section class="center">
+				<section>
+					<h6>4. Core structures</h6>
+					<h2 class="fragment">Controller</h2>
+					<h2 class="fragment">Service</h2>
+					<h2 class="fragment">Directive</h2>
+				</section>
+
+				<section>
+					<h6>4. Core structures</h6>
+					<img src="images/angular-architecture.png" width="700"/>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Controller</h6>
+					<img src="images/angular-architecture-controller.png" width="700"/>
+					<ul class="fragment line2">
+						<li>Performs/triggers UI-oriented work</li>
+						<li>Works together with Services</li>
+						<li>Makes its scope accessible to views</li>
+					</ul>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Controller</h6>
+					<h2>Demo #2</h2>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Service</h6>
+					<img src="images/angular-architecture-service.png" width="700"/>
+					<ul class="fragment line2">
+						<li>Singleton</li>
+						<li>Holds behavior and state across the application</li>
+					</ul>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Service</h6>
+					<h2>Demo #3</h2>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Service</h6>
+					<img src="images/angular-architecture-service.png" width="700"/>
+					<table>
+						<tr>
+							<td class="t"><span class="sec">Different Services</span></td>
+							<td class="t">
+								<ul>
+									<li>Factory</li>
+									<li>Service</li>
+									<li>Provider</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+					<h2 class="fragment">A Service that is a Service?!</h2>		
+				</section>
+
+				<section>
+					<h6>4. Core structures: Directive</h6>
+					<img src="images/angular-architecture-directive.png" width="700"/>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Directive</h6>
+					<table class="vpadded">
+						<tr>
+							<td class="t nowrap"><span class="sec">Two types</span></td>
+							<td class="t">
+								<ul>
+									<li>Behavior modifiers</li>
+									<li>Reusable components</li>
+								</ul>
+							</td>
+						</tr>
+						<tr class="fragment">
+							<td class="nowrap"><span class="sec">Built-in directives</span></td>
+							<td>
+								ng-show, ng-model, ng-class, ng-repeat, ng-switch, ng-view, ng-submit, ...
+							</td>
+						</tr>
+						<tr class="fragment">
+							<td class="nowrap"><span class="sec">Custom directives</span></td>
+							<td>Make your own</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h6>4. Core structures: Directive</h6>
+					<h2>Demo #4</h2>
+				</section>
+
+				<section>
 					<h2>5. Testing!</h2>
 				</section>
 
-				<section class="center">
+				<section>
+					<h6>5. Testing!</h6>
+					<table class="vpadded">
+						<tr>
+							<td class="t nowrap"><span class="sec">Unit tests</span></td>
+							<td class="t">
+								Test one unit of code.
+							</td>
+						</tr>
+						<tr class="fragment">
+							<td class="nowrap"><span class="sec">Integration tests</span></td>
+							<td>
+								Test several units together.
+							</td>
+						</tr>
+						<tr class="fragment">
+							<td class="nowrap"><span class="sec">End-to-end tests</span></td>
+							<td>The full user experience is tested.</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h6>5. Testing! Unit & Integration tests</h6>
+					<img class="m" src="images/karma.png" width="300"/>&nbsp;&nbsp;+&nbsp;&nbsp;<img class="m" src="images/jasmine.svg" width="360"/>
+				</section>
+
+				<section>
+					<h6>5. Testing! Unit & Integration tests</h6>
+					<img class="m" src="images/karma.png" width="700"/>
+					<h2 class="fragment" data-fragment-index="1">Test runner</h2>
+					<ul class="fragment" data-fragment-index="1">
+						<li>Finds unit tests in codebase</li>
+						<li>Opens browsers</li>
+						<li>Runs tests</li>
+						<li>Captures results</li>
+					</ul>
+				</section>
+
+				<section>
+					<h6>5. Testing! Unit & Integration tests</h6>
+					<img class="m" src="images/jasmine.svg" width="700"/>
+					<h2 class="fragment" data-fragment-index="1">Testing framework</h2>
+					<ul class="fragment" data-fragment-index="1">
+						<li>Defines syntax of tests</li>
+						<li>Alternatives: Mocha, QUnit, ...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h6>5. Testing! E-2-E tests</h6>
+					<img class="m" src="images/protractor.png" width="700"/>
+					<ul class="fragment line2">
+						<li>Built on top of Selenium WebDriver</li>
+						<li>Adds Angular-awareness</li>
+						<li>No arbitrary waits</li>
+						<li>Adds find element by model, binding or repeater</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>6. Tools &<br/>Best practices</h2>
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<img src="images/yeoman.png" width="200"/>
+					<img src="images/bower.png" width="200"/>
+					<img src="images/grunt.svg" width="200"/>
+					<img src="images/gulp.png" width="200"/>
+					<span class="nowrap">
+						<img class="m" style="padding-right:25px" src="images/webstorm.gif" width="400"/>
+						<h2 class="m" style="display:inline-block">Batarang</h2>
+					</span>
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<table>
+						<tr>
+							<td class="t"><img src="images/yeoman.png" width="200"/></td>
+							<td class="t">
+								<h2>Yeoman</h2>
+								<h4>= Workflow Management Tool<br/>Automates routine tasks</h4>
+								<pre class="fragment" data-fragment-index="1"><code data-trim>> yo angular myapp</code></pre>
+								<pre class="fragment" data-fragment-index="1"><code data-trim>> yo angular:route myroute</code></pre>
+							</td>
+						</tr>
+					</table>		
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<table>
+						<tr>
+							<td class="t"><img src="images/bower.png" width="200"/></td>
+							<td class="t">
+								<h2>Bower</h2>
+								<h4>= Package Management tool</h4>
+								<pre class="fragment"><code data-trim>bower update</code></pre>
+							</td>
+						</tr>
+					</table>		
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<table>
+						<tr>
+							<td class="t"><img src="images/grunt.svg" width="200"/></td>
+							<td class="t">
+								<h2>Grunt</h2>
+								<h4>= Task Runner</h4>
+								<ul class="fragment">
+									<li>Concatenating files</li>
+									<li>Copying/moving files</li>
+									<li>Renaming files</li>
+									<li>Minifying CSS</li>
+									<li>Minifying JavaScript</li>
+									<li>Running tests or shell scripts</li>
+								</ul>
+							</td>
+						</tr>
+					</table>		
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<img src="images/webstorm.gif" width="600"/>
+					<h4>= JavaScript IDE</h4>
+					<ul class="fragment">
+						<li>AngularJS autocomplete</li>
+						<li>Easy refactoring</li>
+						<li>Karma integration</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<table>
+						<tr>
+							<td class="t"><img src="images/webstorm-small.gif" width="200"/></td>
+							<td class="t">
+								<img src="images/webstorm-screen.png" width="800"/>
+							</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h6>6. Tools & Best practices</h6>
+					<h2>Batarang</h2>
+					<img src="images/batarang.png" width="600"/>
 				</section>
 
 			</div>
@@ -208,7 +582,7 @@
 				controls: true,
 				progress: true,
 				history: true,
-				center: false,
+				center: true,
 				slideNumber: true,
 
 				leap: {
@@ -225,7 +599,8 @@
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/leap/leap.js', async: true }
 				]
 			});
 
